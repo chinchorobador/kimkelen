@@ -390,9 +390,7 @@ class SchoolYear extends BaseSchoolYear
 
   public function areAllExaminationsClosed()
   {
-    $current_year = (int)(date('Y'))-1;
-
-    if (count(ExaminationPeer::retrieveForSchoolYearAndExaminationNumber($this, SchoolBehaviourFactory::getEvaluatorInstance()->getFebruaryExaminationNumber())) == 0 && $this->year != $current_year)
+    if (count(ExaminationPeer::retrieveForSchoolYearAndExaminationNumber($this, SchoolBehaviourFactory::getEvaluatorInstance()->getFebruaryExaminationNumber())) == 0 && $this->year != 2022)
     {
       return false;
     }
